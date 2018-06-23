@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6630c42ca131b3447b05b321394a5931
+timeCreated: 1504418661
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Super Retro M54
+  fontNames:
+  - Super Retro M54
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
