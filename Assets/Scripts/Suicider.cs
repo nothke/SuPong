@@ -16,9 +16,15 @@ public class Suicider : MonoBehaviour
 
     void Update()
     {
+
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
         target = targetT.position;
 
-        Vector3 forceV = (transform.position - target).normalized * force;
+        Vector3 forceV = (target - transform.position).normalized * force;
+        forceV.y = 0;
         rb.AddForce(forceV);
     }
 }
