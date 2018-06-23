@@ -10,5 +10,6 @@ public class Main : MonoBehaviour
 
     public Elevator elevator;
     public Transform suicideTarget;
+    public ParticleSystem bloodParticles;
 
 }

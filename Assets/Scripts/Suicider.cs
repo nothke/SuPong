@@ -29,14 +29,14 @@ public class Suicider : MonoBehaviour
 
     }
 
-    float pushForce = 100;
+    float pushForce = 10;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Pusher")
+        /*if (other.name == "Pusher")
         {
-            rb.AddForce(new Vector3(0, 0, pushForce));
-        }
+            rb.AddForce(new Vector3(0, 0, -pushForce));
+        }*/
 
         if (other.name == "ElevatorTrigger")
         {
@@ -44,6 +44,29 @@ public class Suicider : MonoBehaviour
             targetT = null;
             //            gotoTarget = false;
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.name == "Pusher")
+        {
+            rb.AddForce(new Vector3(0, 0, -pushForce));
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name == "Ground")
+        {
+            Die(collision.contacts[0].point);
+        }
+    }
+
+    void Die(Vector3 point)
+    {
+        Main.e.bloodParticles.transform.position = point;
+        Main.e.bloodParticles.Emit(100);
+        Destroy(gameObject);
     }
 
     private void OnCollisionStay(Collision collision)
